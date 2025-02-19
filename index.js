@@ -13,10 +13,12 @@ app.use(express.json()); // To handle JSON data
 // Serve static frontend files
 app.use(express.static(path.join(__dirname, "frontend/dist")));
 
+
 // Sample API endpoint
 app.get("/api/message", (req, res) => {
-  res.json({ message: "Hello from backend!" });
+  res.json({ message: "Hello from backend!!!!!!!!" });
 });
+
 
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
