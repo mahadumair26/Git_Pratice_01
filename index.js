@@ -12,7 +12,7 @@ const port = 3000
 app.set('view engine', 'ejs');
 
 app.get('/', (req, res) => {
-    res.sendFile(file)
+    res.sendFile(filePath)
 })
 
 app.listen(port, () => {
