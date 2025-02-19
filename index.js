@@ -8,13 +8,13 @@ console.log(filePath);//testing purpose
 
 
 const app = express()
-const port = 3000
+const portno = 3000
 app.set('view engine', 'ejs');
 
 app.get('/', (req, res) => {
     res.sendFile(file)
 })
 
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
+app.listen(portno, () => {
+  console.log(`Example app listening on port ${portno}`)
 })
