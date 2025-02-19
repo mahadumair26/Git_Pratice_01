@@ -1,20 +1,23 @@
 import express from "express";
-import path from 'path';
+import cors from "cors";
+import path from "path";
 
 const __dirname = path.resolve();
+const app = express();
+const port = 3000;
 
-const filePath = path.resolve(__dirname,'index.html')
-console.log(filePath);//testing purpose
+// Enable CORS to allow frontend requests
+app.use(cors());
+app.use(express.json()); // To handle JSON data
 
+// Serve static frontend files
+app.use(express.static(path.join(__dirname, "frontend/dist")));
 
-const app = express()
-const portno = 3000
-app.set('view engine', 'ejs');
+// Sample API endpoint
+app.get("/api/message", (req, res) => {
+  res.json({ message: "Hello from backend!" });
+});
 
-app.get('/', (req, res) => {
-    res.sendFile(file)
-})
-
-app.listen(portno, () => {
-  console.log(`Example app listening on port ${portno}`)
-})
+app.listen(port, () => {
+  console.log(`Server running at http://localhost:${port}`);
+});
